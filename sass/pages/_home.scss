@@ -1,0 +1,30 @@
+[class^="section"] {
+  height: 100vh;
+  background-color: blue;
+  clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  position: relative;
+
+
+  /* ADD LIGHTNING IN BETWEEN SECTION!!!!!!!!
+  ADD LIGHTNING IN BETWEEN SECTION!!!!!!!!
+  ADD LIGHTNING IN BETWEEN SECTION!!!!!!!!
+  ADD LIGHTNING IN BETWEEN SECTION!!!!!!!! */
+}
+
+.section-about {
+  padding-top: 22rem;
+}
+
+.section-features {
+  padding-top: 27rem;
+  background-image: linear-gradient(rgba($color-primary-light, 0.8), rgba($color-primary-light, 0.8)) ,url(../img/nat-1.jpg);
+  background-size: cover;
+}
+
+.section-tours {
+  padding-top: 12rem;
+}
+
+.section-stories {
+  padding-top: 11rem;
+}
