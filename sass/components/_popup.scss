@@ -1,0 +1,80 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .4s;
+
+  &__content {
+    @include absCenter;
+    height: 600px;
+    width: 80%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, .2);
+    display: table;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .4s .2s;
+    transform: translate(-50%, -50%) scale(.5);
+  }
+
+  &__left {
+    width: 33.333%;
+    display: table-cell;
+  }
+
+  &__right {
+    width: 66.6666%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 8rem 6rem;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    &:not(:first-child) {
+      object-position: 0 10%;
+    }
+  }
+
+  &__text {
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid rgb(68, 68, 68);
+  }
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      position: absolute;
+      top: 1.7rem;
+      right: 4rem;
+      font-size: 4rem;
+      text-decoration: none;
+      color: rgb(112, 112, 112);
+      transition: all .2s;
+    }
+
+    &:hover {
+      color: $color-primary-light;
+    }
+  }
+}
