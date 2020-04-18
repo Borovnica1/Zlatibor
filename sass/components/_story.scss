@@ -1,5 +1,5 @@
 .story {
-  background-color: greenyellow;
+  background-color: rgba(248, 255, 245, 0.575);
   transform: skew(-10deg);
   width: 60%;
   margin: 0 auto;
@@ -8,6 +8,12 @@
   border-radius: 3px;
   box-shadow: 0rem .5rem 5rem rgba(black, 0.8);
   vertical-align: middle;
+
+  @include respond(tab-port) {
+    width: 100%;
+    margin: 0;
+    transform: skew(0deg);
+  }
 
   &__img {
     width: 100%;
@@ -28,6 +34,10 @@
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
+
+    @include respond(tab-port) {
+      transform: translateX(-3rem) skew(0deg);
+    }
   }
 
   &__caption {
@@ -46,6 +56,10 @@
 
   &__text {
     transform: skew(10deg);
+
+    @include respond(tab-port) {
+      transform: skew(0deg);
+    }
   }
 
   &:hover &__caption {

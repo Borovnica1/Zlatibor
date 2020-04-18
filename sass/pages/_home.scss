@@ -1,4 +1,4 @@
-[class^="section"] {
+/* [class^="section"] {
 
   // TRY TO FIX 100VH INTO CONTENT HEIGHT WITH SET DEGREES FOR FREE WHITE ARROW SPACE!!!
   height: 100vh;
@@ -10,31 +10,87 @@
   /* ADD LIGHTNING IN BETWEEN SECTION!!!!!!!!
   ADD LIGHTNING IN BETWEEN SECTION!!!!!!!!
   ADD LIGHTNING IN BETWEEN SECTION!!!!!!!!
-  ADD LIGHTNING IN BETWEEN SECTION!!!!!!!! */
+  ADD LIGHTNING IN BETWEEN SECTION!!!!!!!! 
+} */
+
+[class^="section"] {
+
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 180px;
+    background-color: rgb(245, 255, 246);
+    display: block;
+    clip-path: polygon(0 0, 50% 50%, 100% 0,100% 50%, 50% 100%, 0 50%);
+    position: absolute;
+    top: -9rem;
+
+    @include respond(big-desktop) {
+      top: -7.6rem;
+    }
+
+    @include respond(tab-land) {
+      height: 170px;
+      top: -11.5rem;
+    }
+
+    @include respond(tab-port) {
+      height: 115px;
+      top: -9rem;
+    }
+
+    @include respond(phone) {
+      height: 70px;
+      top: -5.4rem;
+    }
+  }
 }
 
 .section-about {
-  padding-top: 22rem;
+  padding: 25rem 0;
+
+
+  @include respond(tab-port) {
+    padding: 12rem 0 38rem 0;
+  }
+
+  @include respond(phone) {
+    padding: 12rem 0 38rem 0;
+  }
 }
 
 .section-features {
-  padding-top: 27rem;
+  padding: 27rem 0;
   background-image: linear-gradient(rgba($color-primary-light, 0.8), rgba($color-primary-light, 0.8)) ,url(../img/nat-1.jpg);
   background-size: cover;
+
+  @include respond(tab-port) {
+    padding: 15rem 0;
+  }
 }
 
 .section-tours {
-  padding-top: 12rem;
+  padding: 16rem 0;
+
+  @include respond(phone) {
+    padding: 12rem 0 8rem 0;
+  }
 }
 
 .section-stories {
-  padding-top: 11rem;
+  padding: 12rem 0;
+  position: relative;
 }
 
 .section-book {
-  padding-top: 24rem;
+  padding: 25rem 0;
   background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-  clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 100%, 0 100%);
+
+  @include respond(tab-port) {
+    padding: 14rem 0;
+  }
 }
 
 .book {
@@ -44,8 +100,26 @@
   box-shadow: 0 1.5rem 4rem rgba(0,0,0, 0.15);
   border-radius: 3px;
 
+  @include respond(tab-port) {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) 65%, transparent 50%), url(../img/nat-9.jpg);
+  }
+
+  @include respond(tab-port) {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) 100%, transparent 50%), url(../img/nat-9.jpg);
+  }
+
   &__form {
     width: 50%;
     padding: 6rem;
+
+    @include respond(tab-port) {
+      width: 70%;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
   }
+
+
 }

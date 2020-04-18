@@ -18,6 +18,10 @@ body {
     letter-spacing: 5rem;
     animation: moveInTop 2s;
     padding-left: 4rem;
+
+    @include respond(phone) {
+      letter-spacing: 2rem;
+    }
   }
 
   &--sub {
@@ -25,13 +29,17 @@ body {
     font-size: 4rem;
     letter-spacing: 1.4rem;
     animation: moveInTop 2s;
+
+    @include respond(phone) {
+      letter-spacing: .2rem;
+    }
   }
 }
 
 .heading-secondary {
   background-image: linear-gradient(to right,
    (rgba($color-primary-light, 0.8),),
-  (rgba($color-secondary-light, 0.8),));
+  (rgba($color-primary-dark, 0.8),));
   color: transparent;
   -webkit-background-clip: text;
   text-transform: uppercase;

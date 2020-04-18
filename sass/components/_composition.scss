@@ -2,8 +2,8 @@
   position: relative;
 
   &__photo {
-    height: 200px;
-    width: 300px;
+    height: 170px;
+    width: 250px;
     object-fit: cover;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
     position: absolute;
@@ -12,20 +12,46 @@
     transition: all .2s;
     outline-offset: 2rem;
 
+    @include respond(tab-port) {
+      height: 130px;
+      width: 270px;
+    }
+
+    @include respond(phone) {
+      height: 120px;
+      width: 200px;
+    }
+
     &--1 {
       object-position: 0 30%;
       top: -2rem;
       left: 5%;
+
+      @include respond(big-desktop) {
+        top: -1rem;
+      }
     }
 
     &--2 {
       top: 5rem;
       left: 40%;
+
+      @include respond(phone) {
+        left: 35%;
+      }
     }
 
     &--3 {
       top: 14rem;
       left: 25%;
+
+      @include respond(phone) {
+        left: 22%;
+      }
+
+      @include respond(big-desktop) {
+        top: 12rem;
+      }
     }
 
     &:hover {

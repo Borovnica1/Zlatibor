@@ -1,9 +1,8 @@
 .popup {
-  height: 100vh;
   width: 100%;
   background-color: rgba(0,0,0,0.5);
   position: fixed;
-  top: 0;
+  top: 50%;
   left: 0;
   z-index: 9000;
   opacity: 0;
@@ -21,11 +20,19 @@
     opacity: 0;
     transition: all .4s .2s;
     transform: translate(-50%, -50%) scale(.5);
+
+    @include respond(tab-port) {
+      display: block;
+    }
   }
 
   &__left {
     width: 33.333%;
     display: table-cell;
+    @include respond(tab-port) {
+      width: 102%;
+      display: inline-block;
+    }
   }
 
   &__right {
@@ -33,6 +40,10 @@
     display: table-cell;
     vertical-align: middle;
     padding: 8rem 6rem;
+
+    @include respond(phone) {
+      padding: 3rem 4rem;
+    }
   }
 
   &__img {
@@ -40,8 +51,14 @@
     width: 100%;
     max-height: 300px;
     object-fit: cover;
+    object-position: 0 90%;
     &:not(:first-child) {
-      object-position: 0 10%;
+      object-position: 0 20%;
+    }
+
+    @include respond(tab-port) {
+      width: 49%;
+      display: inline-block;
     }
   }
 

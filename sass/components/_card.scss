@@ -77,8 +77,21 @@
     color: $color-white;
 
     &-span {
-      background-image: linear-gradient(to right, rgba($color-primary-light, 0.6), rgba($color-secondary-light, 0.6));
+      background-image: linear-gradient(to right, rgba($color-primary-light, 0.6), rgba($color-primary-dark, 0.6));
       padding: .7rem 1.5rem;
+
+      @include respond(tab-port) {
+        display: inline-block;
+        height: 35px;
+      }
+
+      &--2 {
+        background-image: linear-gradient(to right, rgba($color-secondary-light, 0.6), rgba($color-secondary-dark, 0.6));
+      }
+
+      &--3 {
+        background-image: linear-gradient(to right, rgba($color-tertiary-light, 0.6), rgba($color-tertiary-dark, 0.6));
+      }
     }
   }
 
@@ -125,4 +138,50 @@
   &__price-value {
     font-size: 6rem;
   }
-}
+
+
+
+  @include respond(tab-port){
+    height: auto;
+    
+      &__side {
+        height: auto;
+        position: relative;
+        border-radius: 3px;
+
+          &--back {
+            transform: rotateY(0);
+            padding: 5rem;
+          }
+        }
+      
+    
+      &:hover &__side--front {
+        transform: rotateY(0);
+      }
+    
+      &__cta {
+        position: relative;
+        top: 0%;
+        left: 0%;
+        transform: translate(0);
+        width: 100%;
+      }
+    
+      &__price-box {
+
+        margin-bottom: 6rem;
+      }
+    
+      &__price-only {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+      }
+    
+      &__price-value {
+        font-size: 6rem;
+      }
+    }
+  }
+  
+  
